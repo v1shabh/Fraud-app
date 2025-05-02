@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Load the model
-model = joblib.load(r"./fraud_detection_pipline.pkl")
+model = joblib.load(r"fraud_detection_pipline.pkl")
 
 # App title
 st.title("Fraud Detection Prediction App")
