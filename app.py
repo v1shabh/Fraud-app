@@ -3,14 +3,13 @@ import pandas as pd
 import joblib
 
 # Load the model
-model = joblib.load(r"fraud_detection_pipline.pkl")
+model = joblib.load("fraud_detection_pipline.pkl")
 
 # App title
 st.title("Fraud Detection Prediction App")
 
 # App instructions
 st.markdown("Please enter the transaction details and use the Predict button.")
-
 st.divider()
 
 # Input fields
@@ -35,16 +34,9 @@ if st.button("Predict"):
     # Make prediction
     prediction = model.predict(input_data)[0]
 
-    st.subheader(f"Prediction : '{int(prediction)}'")
+    st.subheader(f"Prediction: '{int(prediction)}'")
 
-    if prediction ==1:
+    if prediction == 1:
         st.error("This transaction can be fraud")
-
     else:
         st.success("This transaction looks like it is not a fraud")
-
-
-
-        
-
-   
